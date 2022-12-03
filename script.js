@@ -1,33 +1,58 @@
 function calculateNetSalary(grossSalary) {
-    
+    return Math.floor((45*grossSalary)/100);
 }
 
 function sumSalaries(salaries) {
-    
+    let sum = 0;
+    for (let salary of salaries) sum += salary;
+    return sum;
 }
 
 function inputToNumber(elementID) {
-    
+    return isNaN(document.getElementById(elementID).value) ? 0 : +document.getElementById(elementID).value;
 }
 
 function capitalizeFirstLastName(text1, text2) {
-    
+    return capName = text1.charAt(0).toUpperCase() + text1.slice(1) + " " + text2.charAt(0).toUpperCase() + text2.slice(1);
 }
 
 function sumSubsetSalaries(allSalaries, start, end) {
-    
+    let sum = 0;
+    for (let i = start-1; i < end; i++) sum += allSalaries[i];
+    return sum;
 }
 
 function getHighestSalary(list) {
-    
+    return Math.max(...list);
 }
 
 function getMatchingPersons(employees, find) {
-    
+    return employees.filter(employee => employee.includes(find));
 }
 
 function isValideNumber(input) {
-    
+    let charList = input.split("");
+
+    for (let char of charList) {
+        //console.log(char.charCodeAt(0));
+        if ((char.charCodeAt(0) < 48 || char.charCodeAt(0) > 57) && (char.charCodeAt(0) < 43 || char.charCodeAt(0) > 46))
+            return false;
+    }
+    return true;
+
+    /*if (
+        typeof +input === 'number'
+        && +input!==NaN
+        && +input!==Number.NaN
+        && +input!==undefined
+        && !isNaN(Number(input))
+        ) {
+
+            return true;
+    }
+    else {
+        return false;
+    }*/
 } 
 
 function isValideEmail(text) {
